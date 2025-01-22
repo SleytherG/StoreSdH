@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/1.0/CREATE_TABLES_STORE_SDH.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/2.0/01_RENAME_TABLES.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/2.0/02_INSERT_DATA_ON_TABLES.sql" dialect="PostgreSQL" />
+    <file url="PROJECT" dialect="PostgreSQL" />
+  </component>
+</project>

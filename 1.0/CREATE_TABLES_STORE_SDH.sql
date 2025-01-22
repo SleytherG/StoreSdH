@@ -12,10 +12,10 @@ CREATE TABLE Category(
     description TEXT
 );
 
-CREATE TABLE UserStore(
+CREATE TABLE USER_STORE(
     id SERIAL PRIMARY KEY,
     full_name VARCHAR(255) NOT NULL,
-    role VARCHAR(50) CHECK (role IN ('admin', 'employee')),
+    role VARCHAR(50) CHECK (role IN ('ADMIN', 'EMPLOYEE')),
     password VARCHAR(255) NOT NULL
 );
 
@@ -29,16 +29,15 @@ CREATE TABLE PRODUCT (
     category_id INT REFERENCES Category(id),
     supplier_id INT REFERENCES Supplier(id),
     is_active BOOLEAN DEFAULT TRUE
-
 );
 
 CREATE TABLE Movement(
     id SERIAL PRIMARY KEY,
     product_id INT REFERENCES Product(id),
-    movement_type VARCHAR(10) CHECK (movement_type IN ('entry', 'exit')),
+    movement_type VARCHAR(10) CHECK (movement_type IN ('ENTRY', 'EXIT')),
     quantity INT NOT NULL,
     movement_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    user_id INT REFERENCES user_store(id),
+    user_id INT REFERENCES USER_STORE(id),
     description TEXT
 );
 
@@ -48,6 +47,6 @@ CREATE TABLE InventoryAdjustment(
     adjusted_quantity INT,
     description TEXT,
     adjustment_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    user_id INT REFERENCES user_store(id)
+    user_id INT REFERENCES USER_STORE(id)
 );
 
